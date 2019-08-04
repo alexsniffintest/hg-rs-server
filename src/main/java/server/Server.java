@@ -1,6 +1,5 @@
 package server;
 
-
 import org.apache.mina.common.IoAcceptor;
 import org.apache.mina.transport.socket.nio.SocketAcceptor;
 import org.apache.mina.transport.socket.nio.SocketAcceptorConfig;
@@ -37,9 +36,6 @@ import java.text.DecimalFormat;
  */
 
 public class Server {
-
-
-	
 
 	public static boolean sleeping;
 	public static final int cycleRate;

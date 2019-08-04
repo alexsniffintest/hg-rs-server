@@ -1,0 +1,40 @@
+language: scala
+
+scala:
+  - 2.12.8
+
+jdk: oraclejdk8
+
+services:
+  - docker
+
+cache:
+  directories:
+    - $HOME/.m2/repository
+    - $HOME/.sbt
+    - $HOME/.ivy2
+
+script:
+  - sbt ++$TRAVIS_SCALA_VERSION clean assembly
+
+deploy:
+  - provider: script
+    script: docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: script
+    script: docker build --label app.version=${TRAVIS_TAG} -t ${IMAGE_TAG} .
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: script
+    script: docker push ${IMAGE_TAG}
+    skip_cleanup: true
+    on:
+      tags: true
+env:
+  global:
+    - ARTIFACT_ID=hg-rs-server
+    - DOCKER_USERNAME=asniffin
+    - IMAGE_TAG=${REGISTRY_URL}/${ARTIFACT_ID}:${TRAVIS_TAG}
