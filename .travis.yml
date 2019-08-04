@@ -19,7 +19,7 @@ script:
 
 deploy:
   - provider: script
-    script: docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+    script: docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} https://hub.docker.com
     skip_cleanup: true
     on:
       tags: true
@@ -37,4 +37,4 @@ env:
   global:
     - ARTIFACT_ID=hg-rs-server
     - DOCKER_USERNAME=asniffin
-    - IMAGE_TAG=${REGISTRY_URL}/${ARTIFACT_ID}:${TRAVIS_TAG}
+    - IMAGE_TAG=${DOCKER_USERNAME}/${ARTIFACT_ID}:${TRAVIS_TAG}
