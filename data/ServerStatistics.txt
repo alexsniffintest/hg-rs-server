@@ -1,0 +1,9 @@
+[ Hunger Games Server Statisics ]
+GamesPlayed = 0
+PlayersKilled = 0
+PlayersDied = 0
+ChestsLooted = 0
+TotalTraps = 0
+TotalGrandChests = 0
+TotalExp = 0
+Lottery = 0

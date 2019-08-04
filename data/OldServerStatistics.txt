@@ -1,0 +1,9 @@
+[ Hunger Games Server Statisics ]
+GamesPlayed = 37819
+PlayersKilled = 189847
+PlayersDied = 192935
+ChestsLooted = 3850698
+TotalTraps = 233332
+TotalGrandChests = 40841
+TotalExp = 3092634088
+Lottery = 1221538
