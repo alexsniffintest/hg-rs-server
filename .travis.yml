@@ -19,7 +19,7 @@ script:
 
 deploy:
   - provider: script
-    script: docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} https://hub.docker.com
+    script: docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
     skip_cleanup: true
     on:
       tags: true
