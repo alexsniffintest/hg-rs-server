@@ -73,7 +73,7 @@ public class I
         long l = System.currentTimeMillis();
         try
         {
-            randomaccessfile = new RandomAccessFile("./Data/worldmap.bin", "r");
+            randomaccessfile = new RandomAccessFile("./data/worldmap.bin", "r");
             abyte0 = new byte[(int)randomaccessfile.length()];
             randomaccessfile.read(abyte0, 0, (int)randomaccessfile.length());
             randomaccessfile.close();
@@ -348,7 +348,7 @@ public class I
         BufferedReader bufferedreader = null;
         try
         {
-            bufferedreader = new BufferedReader(new FileReader("./Data/objectSize.cfg"));
+            bufferedreader = new BufferedReader(new FileReader("./data/objectSize.cfg"));
         }
         catch(FileNotFoundException filenotfoundexception)
         {

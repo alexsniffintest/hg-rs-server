@@ -22,7 +22,7 @@ public class PlayerSave
 		boolean File1 = false;
 		
 		try {
-			characterfile = new BufferedReader(new FileReader("./Data/characters/"+playerName+".txt"));
+			characterfile = new BufferedReader(new FileReader("./data/characters/"+playerName+".txt"));
 			File1 = true;
 		} catch(FileNotFoundException fileex1) {
 		}
@@ -290,7 +290,7 @@ public class PlayerSave
 		
 		BufferedWriter characterfile = null;
 		try {
-			characterfile = new BufferedWriter(new FileWriter("./Data/characters/"+p.playerName+".txt"));
+			characterfile = new BufferedWriter(new FileWriter("./data/characters/"+p.playerName+".txt"));
 			
 			/*ACCOUNT*/
 			characterfile.write("HG ACCOUNT FILE", 0, 15);

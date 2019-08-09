@@ -13,7 +13,7 @@ public class ExceptionCatcher {
 	private static Client c;
 	private static Date date = new Date();
 	private static DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-	public static String fileName = "./Data/FatalExceptions.txt";
+	public static String fileName = "./data/FatalExceptions.txt";
 	
 	public static void printException()
 	{

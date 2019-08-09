@@ -24,7 +24,7 @@ public class DoubleDoors {
 	
 	public static DoubleDoors getSingleton() {
 		if (singleton == null) {
-			singleton = new DoubleDoors("./Data/doubledoors.txt");
+			singleton = new DoubleDoors("./data/doubledoors.txt");
 		}
 		return singleton;
 	}

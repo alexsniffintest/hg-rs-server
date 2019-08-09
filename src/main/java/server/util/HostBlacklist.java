@@ -7,7 +7,7 @@ import java.util.List;
 
 public class HostBlacklist {
 
-	private static final String BLACKLIST_DIR = "./Data/blacklist.txt";
+	private static final String BLACKLIST_DIR = "./data/blacklist.txt";
 
 	private static List<String> blockedHostnames = new ArrayList<String>();
 

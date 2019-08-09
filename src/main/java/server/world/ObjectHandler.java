@@ -22,8 +22,8 @@ public class ObjectHandler {
 	
 	public List<Objects> globalObjects = new ArrayList<Objects>();	
 	public ObjectHandler() { 
-		loadGlobalObjects("./Data/cfg/global-objects.cfg");
-		loadDoorConfig("./Data/cfg/doors.cfg");
+		loadGlobalObjects("./data/cfg/global-objects.cfg");
+		loadDoorConfig("./data/cfg/doors.cfg");
 	}
 	
 

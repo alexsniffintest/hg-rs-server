@@ -27,7 +27,7 @@ public class NPCDrops {
 			int[][][] npcDrops = new int [3800][][];
 			int[][][] rareDrops2 = new int [3800][][];
 			int[] itemRarity = new int [3800];
-			File f = new File("./Data/cfg/NPCDrops.TSM");
+			File f = new File("./data/cfg/NPCDrops.TSM");
 			Scanner s = new Scanner(f);
 			while (s.hasNextLine()) {
 				String line = s.nextLine();
@@ -71,7 +71,7 @@ public class NPCDrops {
 	
 	public void loadConstants() {
 		try {
-			File f = new File("./Data/cfg/NpcConstants.TSM");
+			File f = new File("./data/cfg/NpcConstants.TSM");
 			Scanner s = new Scanner(f);
 			while (s.hasNextLine()) {
 				String line = s.nextLine();

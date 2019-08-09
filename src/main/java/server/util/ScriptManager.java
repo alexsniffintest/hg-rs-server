@@ -67,7 +67,7 @@ public class ScriptManager {
 	public static void loadScripts() throws IOException {
 		System.out.println("Loading scripts...");
 		ScriptManager.python.cleanup();
-		File scriptDir = new File("./Data/scripts/");
+		File scriptDir = new File("./data/scripts/");
 		if (scriptDir.isDirectory() && !scriptDir.getName().startsWith(".")) {
 			File[] children = scriptDir.listFiles();
 			for (File child : children)
