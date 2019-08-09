@@ -1,6 +1,6 @@
 name := "hg-rs-server"
 organization := "com.github.alexsniffintest"
-version := "2.0-RC1"
+version := "2.0.0-RC1"
 scalaVersion := "2.12.8"
 
 mainClass in assembly := Some("server.Server")
