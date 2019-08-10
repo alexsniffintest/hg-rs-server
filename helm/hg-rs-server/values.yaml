@@ -1,0 +1,21 @@
+name: hg-rs-server
+
+replicaCount: 1
+
+image:
+  repository: asniffin/hg-rs-server
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 46900
+  targetPort: 46900
+
+resources:
+  limits:
+    cpu: 2000m
+    memory: 128Mi
+  requests:
+    cpu: 2000m
+    memory: 128Mi

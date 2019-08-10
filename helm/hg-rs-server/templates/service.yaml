@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "hg-rs-server.fullname" . }}
+  labels:
+    app: {{ template "hg-rs-server.name" . }}
+    chart: {{ template "hg-rs-server.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: TCP
+      name: server-port
+  selector:
+    app: {{ template "hg-rs-server.name" . }}
+    release: {{ .Release.Name }}
