@@ -21,6 +21,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
+          containerPort: 46900
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
@@ -32,3 +33,5 @@ spec:
           volumeMounts:
             - mountPath: "/app/data"
               name: server-data
+      imagePullSecrets:
+        - name: dockerhub
