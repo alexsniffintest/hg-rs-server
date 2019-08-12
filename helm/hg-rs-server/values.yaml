@@ -1,4 +1,4 @@
-name: hg-rs-server
+name: server
 
 replicaCount: 1
 
@@ -14,8 +14,8 @@ service:
 
 resources:
   limits:
-    cpu: 2000m
-    memory: 128Mi
+    cpu: 300m
+    memory: 1500Mi
   requests:
-    cpu: 2000m
-    memory: 128Mi
+    cpu: 300m
+    memory: 1500Mi
