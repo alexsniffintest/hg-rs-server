@@ -19,19 +19,22 @@ spec:
         app: {{ template "hg-rs-server.name" . }}
         release: {{ .Release.Name }}
     spec:
+      volumes:
+        - name: data-volume
+          persistentVolumeClaim:
+            claimName: server-data
       containers:
         - name: {{ .Chart.Name }}
-          containerPort: 46900
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: server-port
-              containerPort: {{ .Values.service.taregtPort }}
+              containerPort: {{ .Values.service.targetPort }}
               protocol: TCP
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:
             - mountPath: "/app/data"
-              name: server-data
+              name: data-volume
       imagePullSecrets:
         - name: dockerhub
