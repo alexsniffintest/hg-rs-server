@@ -1,0 +1,21 @@
+name: server
+
+replicaCount: 1
+
+image:
+  repository: asniffin/hg-rs-server
+  tag: 2.0.3-RELEASE
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 46900
+  targetPort: 46900
+
+resources:
+  limits:
+    cpu: 300m
+    memory: 1500Mi
+  requests:
+    cpu: 300m
+    memory: 1500Mi

@@ -5,7 +5,7 @@ import java.io.*;
 public class serverStatistics {
 	
 	private static Client c;
-	public static String fileName = "./Data/ServerStatistics.txt";
+	public static String fileName = "./data/ServerStatistics.txt";
 	
 	public static void serverStats()
 	{

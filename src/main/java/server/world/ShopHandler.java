@@ -111,7 +111,7 @@ public class ShopHandler {
 		int ReadMode = 0;
 		BufferedReader characterfile = null;
 		try {
-			characterfile = new BufferedReader(new FileReader("./Data/cfg/"+FileName));
+			characterfile = new BufferedReader(new FileReader("./data/cfg/"+FileName));
 		} catch(FileNotFoundException fileex) {
 			Misc.println(FileName+": file not found.");
 			return false;

@@ -1603,7 +1603,6 @@ public class Client extends Player {
 				resetPass = 1;
 				firstLogin();
 			}
-			MadTurnipConnection.addDonateItems(this,playerName);
 			calcCombat();
 			if (rememberedKit == null)
 				rememberedKit = "Default";

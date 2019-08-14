@@ -172,8 +172,8 @@ public class ObjectManager {
 	public static void loadObjectSizes()
 	{
 		try {
-			java.io.DataInputStream dis = new java.io.DataInputStream(new java.io.FileInputStream("./Data/object_size_config"));
-			int size = (int) (new java.io.File("./Data/object_size_config").length() / 2);
+			java.io.DataInputStream dis = new java.io.DataInputStream(new java.io.FileInputStream("./data/object_size_config"));
+			int size = (int) (new java.io.File("./data/object_size_config").length() / 2);
 			for (int index = 0; index < size; index++)
 			{
 				int bitPart = dis.readShort();

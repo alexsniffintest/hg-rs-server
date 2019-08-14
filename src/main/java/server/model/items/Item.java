@@ -84,7 +84,7 @@ public class Item {
 		int c;
 		
 		try {
-			FileInputStream dataIn = new FileInputStream(new File("./Data/data/stackable.dat"));
+			FileInputStream dataIn = new FileInputStream(new File("./data/data/stackable.dat"));
 			while ((c = dataIn.read()) != -1) {
 				if (c == 0) {
 					itemStackable[counter] = false;
@@ -102,7 +102,7 @@ public class Item {
 		counter = 0;
 		
 		try {
-			FileInputStream dataIn = new FileInputStream(new File("./Data/data/notes.dat"));
+			FileInputStream dataIn = new FileInputStream(new File("./data/data/notes.dat"));
 			while ((c = dataIn.read()) != -1) {
 				if (c == 0) {
 					itemIsNote[counter] = true;
@@ -119,7 +119,7 @@ public class Item {
 		
 		counter = 0;
 		try {
-			FileInputStream dataIn = new FileInputStream(new File("./Data/data/equipment.dat"));
+			FileInputStream dataIn = new FileInputStream(new File("./data/data/equipment.dat"));
 			while ((c = dataIn.read()) != -1) {
 				targetSlots[counter++] = c;
 			}

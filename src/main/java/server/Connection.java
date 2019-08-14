@@ -76,16 +76,16 @@ public class Connection {
 	
 	public static void unMuteUser(String name) {
 		mutedNames.remove(name);
-		deleteFromFile("./Data/bans/UsersMuted.txt", name);	
+		deleteFromFile("./data/bans/UsersMuted.txt", name);	
 	}
 	
 	public static void unIPMuteUser(String name) {
 		mutedIps.remove(name);
-		deleteFromFile("./Data/bans/IpsMuted.txt", name);	
+		deleteFromFile("./data/bans/IpsMuted.txt", name);	
 	}
 	public static void unUidBanUser(String name) {
 		bannedUid.remove(name);
-		deleteFromFile("./Data/bans/UUIDBans.txt", name);	
+		deleteFromFile("./data/bans/UUIDBans.txt", name);	
 	}
 	/**
 	* Adding Ban IP
@@ -178,21 +178,21 @@ public class Connection {
 	**/
 	public static void removeNameFromBanList(String name) {
 		bannedNames.remove(name.toLowerCase());
-		deleteFromFile("./Data/bans/UsersBanned.txt", name);
+		deleteFromFile("./data/bans/UsersBanned.txt", name);
 	}
 	public static void removeUidFromBanList(String UUID) {
 		bannedUid.remove(UUID);
-		deleteFromFile("./Data/bans/UUIDBans.txt", UUID);	
+		deleteFromFile("./data/bans/UUIDBans.txt", UUID);	
 	}
 	
 	public static void removeNameFromMuteList(String name) {
 		bannedNames.remove(name.toLowerCase());
-		deleteFromFile("./Data/bans/UsersMuted.txt", name);
+		deleteFromFile("./data/bans/UsersMuted.txt", name);
 	}
 	static String uidForUser = null;
 	
 	public static void getUidForUser(Client c, String name) {
-		  File file = new File("./Data/characters/" + name + ".txt");
+		  File file = new File("./data/characters/" + name + ".txt");
 	        StringBuffer contents = new StringBuffer();
 	        BufferedReader reader = null;
 	        boolean error = false;
@@ -238,7 +238,7 @@ public class Connection {
 	        //System.out.println(macForUser);
 	        if(!error) {
 	        bannedUid.remove(uidForUser);
-			deleteFromFile("./Data/bans/UUIDBans.txt", uidForUser);
+			deleteFromFile("./data/bans/UUIDBans.txt", uidForUser);
 			c.sendMessage("@red@Un-UUID banned user "+name+" with the UUID address of "+uidForUser+".");
 	        }
 	}
@@ -284,7 +284,7 @@ public class Connection {
 	**/
 	public static void banUsers() {
 		try {
-			BufferedReader in = new BufferedReader(new FileReader("./Data/bans/UsersBanned.txt"));
+			BufferedReader in = new BufferedReader(new FileReader("./data/bans/UsersBanned.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -300,7 +300,7 @@ public class Connection {
 	
 	public static void muteUsers() {
 		try {
-			BufferedReader in = new BufferedReader(new FileReader("./Data/bans/UsersMuted.txt"));
+			BufferedReader in = new BufferedReader(new FileReader("./data/bans/UsersMuted.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -318,7 +318,7 @@ public class Connection {
 	**/
 	public static void banIps() {
 		try {
-			BufferedReader in = new BufferedReader(new FileReader("./Data/bans/IpsBanned.txt"));
+			BufferedReader in = new BufferedReader(new FileReader("./data/bans/IpsBanned.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -333,7 +333,7 @@ public class Connection {
 	}
 	public static void banMac() {
 		try {
-			BufferedReader in = new BufferedReader(new FileReader("./Data/bans/MacBanned.txt"));
+			BufferedReader in = new BufferedReader(new FileReader("./data/bans/MacBanned.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -349,7 +349,7 @@ public class Connection {
 	
 	public static void muteIps() {
 		try {
-			BufferedReader in = new BufferedReader(new FileReader("./Data/bans/IpsMuted.txt"));
+			BufferedReader in = new BufferedReader(new FileReader("./data/bans/IpsMuted.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -365,7 +365,7 @@ public class Connection {
 
 	public static void appendStarters() {
 		try {
-			BufferedReader in = new BufferedReader(new FileReader("./Data/starters/FirstStarterRecieved.txt"));
+			BufferedReader in = new BufferedReader(new FileReader("./data/starters/FirstStarterRecieved.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -381,7 +381,7 @@ public class Connection {
 
 	public static void appendStarters2() {
 		try {
-			BufferedReader in = new BufferedReader(new FileReader("./Data/starters/SecondStarterRecieved.txt"));
+			BufferedReader in = new BufferedReader(new FileReader("./data/starters/SecondStarterRecieved.txt"));
 			String data = null;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -399,7 +399,7 @@ public class Connection {
 	**/
 	public static void addNameToFile(String Name) {
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter("./Data/bans/UsersBanned.txt", true));
+			BufferedWriter out = new BufferedWriter(new FileWriter("./data/bans/UsersBanned.txt", true));
 		    try {
 				out.newLine();
 				out.write(Name);
@@ -413,7 +413,7 @@ public class Connection {
 	
 	public static void addUserToFile(String Name) {
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter("./Data/bans/UsersMuted.txt", true));
+			BufferedWriter out = new BufferedWriter(new FileWriter("./data/bans/UsersMuted.txt", true));
 		    try {
 				out.newLine();
 				out.write(Name);
@@ -435,7 +435,7 @@ public class Connection {
 
 	public static void addIpToFile(String Name) {
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter("./Data/bans/IpsBanned.txt", true));
+			BufferedWriter out = new BufferedWriter(new FileWriter("./data/bans/IpsBanned.txt", true));
 		    try {
 				out.newLine();
 				out.write(Name);
@@ -448,7 +448,7 @@ public class Connection {
 	}
 	public static void addUidToFile(String UUID) {
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter("./Data/bans/UUIDBans.txt", true));
+			BufferedWriter out = new BufferedWriter(new FileWriter("./data/bans/UUIDBans.txt", true));
 		    try {
 				out.newLine();
 				out.write(UUID);
@@ -461,7 +461,7 @@ public class Connection {
 	}
 	public static void banUid() {
 		try {
-			BufferedReader in = new BufferedReader(new FileReader("./Data/bans/UUIDBans.txt"));
+			BufferedReader in = new BufferedReader(new FileReader("./data/bans/UUIDBans.txt"));
 			String data;
 			try {
 				while ((data = in.readLine()) != null) {
@@ -477,7 +477,7 @@ public class Connection {
 	}
 	public static void addMacToFile(String Name) {
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter("./Data/bans/MacBanned.txt", true));
+			BufferedWriter out = new BufferedWriter(new FileWriter("./data/bans/MacBanned.txt", true));
 		    try {
 				out.newLine();
 				out.write(Name);
@@ -491,7 +491,7 @@ public class Connection {
 	
 	public static void addIpToMuteFile(String Name) {
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter("./Data/bans/IpsMuted.txt", true));
+			BufferedWriter out = new BufferedWriter(new FileWriter("./data/bans/IpsMuted.txt", true));
 		    try {
 				out.newLine();
 				out.write(Name);
@@ -505,7 +505,7 @@ public class Connection {
 	
 	public static void addIpToStarterList1(String Name) {
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter("./Data/starters/FirstStarterRecieved.txt", true));
+			BufferedWriter out = new BufferedWriter(new FileWriter("./data/starters/FirstStarterRecieved.txt", true));
 		    try {
 				out.newLine();
 				out.write(Name);
@@ -519,7 +519,7 @@ public class Connection {
 
 	public static void addIpToStarterList2(String Name) {
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter("./Data/starters/SecondStarterRecieved.txt", true));
+			BufferedWriter out = new BufferedWriter(new FileWriter("./data/starters/SecondStarterRecieved.txt", true));
 		    try {
 				out.newLine();
 				out.write(Name);

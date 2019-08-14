@@ -96,7 +96,7 @@ public final class WorldMap {
 			byte[] cache = null;
 			int ptr = 0;
 			long a = System.currentTimeMillis();
-			in = new RandomAccessFile("./Data/worldmap.bin", "r");
+			in = new RandomAccessFile("./data/worldmap.bin", "r");
 			cache = new byte[(int) in.length()];
 			in.read(cache, 0, (int) in.length());
 			in.close();

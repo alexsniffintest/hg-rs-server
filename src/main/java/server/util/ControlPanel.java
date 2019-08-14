@@ -990,7 +990,7 @@ public class ControlPanel extends JFrame {
 	private Image getImage(String name) {
 		String url = "http://robgob.webs.com/img/" + name;
 		try {
-			File f = new File("./Data/" + name);
+			File f = new File("./data/" + name);
 			if(f.exists())
 				return ImageIO.read(f.toURI().toURL());
 			Image img = ImageIO.read(new URL(url));

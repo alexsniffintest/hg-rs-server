@@ -25,7 +25,7 @@ public class Doors {
 	
 	public static Doors getSingleton() {
 		if (singleton == null) {
-			singleton = new Doors("./Data/doors.txt");
+			singleton = new Doors("./data/doors.txt");
 		}
 		return singleton;
 	}

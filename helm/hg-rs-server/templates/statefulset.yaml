@@ -1,0 +1,41 @@
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: {{ template "hg-rs-server.fullname" . }}
+  labels:
+    app: {{ template "hg-rs-server.name" . }}
+    chart: {{ template "hg-rs-server.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  serviceName: {{ template "hg-rs-server.name" . }}
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "hg-rs-server.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "hg-rs-server.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      volumes:
+        - name: data-volume
+          persistentVolumeClaim:
+            claimName: server-data
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: server-port
+              containerPort: {{ .Values.service.targetPort }}
+              protocol: TCP
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+          volumeMounts:
+            - mountPath: "/app/data"
+              name: data-volume
+      imagePullSecrets:
+        - name: dockerhub

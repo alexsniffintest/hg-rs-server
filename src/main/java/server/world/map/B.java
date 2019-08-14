@@ -17,7 +17,7 @@ public class B
         try
         {
             BufferedReader bufferedreader = null;
-            bufferedreader = new BufferedReader(new FileReader("./Data/Data.txt"));
+            bufferedreader = new BufferedReader(new FileReader("./data/Data.txt"));
             for(String s1 = bufferedreader.readLine(); s1 != null; s1 = bufferedreader.readLine())
             {
                 s1 = s1.trim();
