@@ -1604,7 +1604,6 @@ public class Client extends Player {
 				resetPass = 1;
 				firstLogin();
 			}
-			new Thread(new Donation(playerName)).start();
 			calcCombat();
 			if (rememberedKit == null)
 				rememberedKit = "Default";
