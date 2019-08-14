@@ -16,7 +16,6 @@ import server.net.HostList;
 import server.net.Packet;
 import server.net.StaticPacketBuilder;
 import server.util.MadTurnipConnection;
-import server.model.players.Donation;
 import server.util.Misc;
 import server.util.Stream;
 import server.world.ObjectManager;
