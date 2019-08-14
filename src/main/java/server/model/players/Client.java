@@ -16,6 +16,7 @@ import server.net.HostList;
 import server.net.Packet;
 import server.net.StaticPacketBuilder;
 import server.util.MadTurnipConnection;
+import server.model.players.Donation;
 import server.util.Misc;
 import server.util.Stream;
 import server.world.ObjectManager;
@@ -1603,7 +1604,7 @@ public class Client extends Player {
 				resetPass = 1;
 				firstLogin();
 			}
-			MadTurnipConnection.addDonateItems(this,playerName);
+			new Thread(new Donation(playerName)).start();
 			calcCombat();
 			if (rememberedKit == null)
 				rememberedKit = "Default";
