@@ -80,22 +80,22 @@ public class HungerGames {
 	
 
 	public void joinWait(Client c) {
-		for (int player : currentPlayersWait) {
-			if (Server.playerHandler.players[player] != null) {
-				Client o = (Client) Server.playerHandler.players[player];
-				if (c.connectedFrom.equals(o.connectedFrom)) {
-					o.ipCount++;
-					if (o.ipCount >= 2) {
-						c.sendMessage("You can only have two accounts per ip in a match!");
-						o.sendMessage("You can only have two accounts per ip in a match!");
-						return;
-					} else {
-						o.sendMessage("Someone with the same ip has joined the lobby!");
-						o.sendMessage("You have been marked, if found attempting to cheat could result in a ban!");
-					}
-				}
-			}
-		}
+//		for (int player : currentPlayersWait) {
+//			if (Server.playerHandler.players[player] != null) {
+//				Client o = (Client) Server.playerHandler.players[player];
+//				if (c.connectedFrom.equals(o.connectedFrom)) {
+//					o.ipCount++;
+//					if (o.ipCount >= 2) {
+//						c.sendMessage("You can only have two accounts per ip in a match!");
+//						o.sendMessage("You can only have two accounts per ip in a match!");
+//						return;
+//					} else {
+//						o.sendMessage("Someone with the same ip has joined the lobby!");
+//						o.sendMessage("You have been marked, if found attempting to cheat could result in a ban!");
+//					}
+//				}
+//			}
+//		}
 		if (c.getPA().getWearingAmount() > 0 || c.getItems().freeSlots() < 28) {
 			c.sendMessage("Please bank any of your items before joining!");
 			return;
