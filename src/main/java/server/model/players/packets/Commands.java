@@ -270,7 +270,7 @@ public class Commands implements PacketType {
 				}
 			}
 			
-			if (playerCommand.equalsIgnoreCase("check") || playerCommand.equalsIgnoreCase("claim")) {
+			/* if (playerCommand.equalsIgnoreCase("check") || playerCommand.equalsIgnoreCase("claim")) {
 								if (c.inCwWait || c.inCwGame) {
 					c.sendMessage("You can't use that here!");
 					return;
@@ -348,12 +348,12 @@ public class Commands implements PacketType {
 				} else {
 					c.sendMessage("You just recently used that command, please wait 60 seconds!");
 				}
-			}
+			}*/
 			
 			if (playerCommand.equalsIgnoreCase("vote")) {
-				c.getPA().sendFrame126("www.hg-rs.com/vote", 12000);
-				c.sendMessage("Opening www.HG-RS.com/vote . .");
-				c.sendMessage("After you vote do ::check");
+				//c.getPA().sendFrame126("www.hg-rs.com/vote", 12000);
+				c.sendMessage("Voting is currently disabled.");
+				c.sendMessage("Check back soon!");
             }
 			
 			if (playerCommand.startsWith("server")) {
