@@ -4,7 +4,7 @@ replicaCount: 1
 
 image:
   repository: asniffin/hg-rs-server
-  tag: 2.0.2-RELEASE
+  tag: 2.0.3-RELEASE
   pullPolicy: IfNotPresent
 
 service:
